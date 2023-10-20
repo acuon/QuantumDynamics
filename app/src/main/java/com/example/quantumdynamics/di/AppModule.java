@@ -2,7 +2,7 @@ package com.example.quantumdynamics.di;
 
 
 
-import com.example.quantumdynamics.ui.login.LoginViewModel;
+import com.example.quantumdynamics.ui.login.viewmodel.LoginViewModel;
 
 import dagger.Module;
 import dagger.Provides;

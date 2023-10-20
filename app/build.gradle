@@ -27,9 +27,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildFeatures {
-        viewBinding true
-        dataBinding true
+//    buildFeatures {
+//        viewBinding true
+//        dataBinding true
+//    }
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -43,6 +46,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     implementation 'androidx.work:work-runtime:2.7.1'
+    implementation 'androidx.databinding:databinding-runtime:4.2.2'
 
     // Hilt (Dagger Hilt for Dependency Injection)
     implementation "com.google.dagger:hilt-android:2.38.1"

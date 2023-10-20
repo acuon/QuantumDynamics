@@ -4,11 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
+import com.example.quantumdynamics.BR;
 import com.example.quantumdynamics.R;
 import com.example.quantumdynamics.databinding.ActivityDashboardBinding;
 import com.example.quantumdynamics.base.BaseActivity;
+import com.example.quantumdynamics.ui.login.viewmodel.LoginViewModel;
 
-public class DashboardActivity extends BaseActivity<ActivityDashboardBinding> {
+public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, LoginViewModel> {
+
+    @Override
+    public int getBindingVariable() {
+        return BR.vm;
+    }
 
     @Override
     public int getLayoutId() {

@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import androidx.annotation.LayoutRes;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,17 +16,27 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.annotation.Nullable;
 
+import javax.inject.Inject;
 
-public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatActivity
+
+public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel> extends AppCompatActivity
         implements BaseFragment.Callback {
-    private ProgressDialog mProgressDialog;
 
     private T mViewDataBinding;
+
+    @Inject
+    protected V viewModel;
+
+    public abstract int getBindingVariable();
 
     public abstract
     @LayoutRes
     int getLayoutId();
 
+
+    public void showToast(String str) {
+        Toast.makeText(mViewDataBinding.getRoot().getContext(), str, Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public void onFragmentAttached() {
@@ -87,7 +98,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
 
     private void performDataBinding() {
         mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId());
-//        mViewDataBinding.setVariable(getBindingVariable());
+        mViewDataBinding.setVariable(getBindingVariable(), viewModel);
         mViewDataBinding.executePendingBindings();
     }
 }
