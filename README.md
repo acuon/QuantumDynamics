@@ -5,14 +5,14 @@ Welcome to the Quantum Dynamics Android application repository! This application
 ## APK File
 
 You can download the APK file of the Bhagwad Geeta app from the following link:
-[Download QuantamDynamics App](https://github.com/acuon/QuantumDynamics/tree/main/files/apk)
+[Download QuantamDynamics App](https://github.com/acuon/QuantumDynamics/tree/master/files/apk)
 
 ## Screenshots
 <p align="center">
-  <a href="https://github.com/acuon/QuantumDynamics" title="Login Screen"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss1.png"></a>
-  <a href="https://github.com/acuon/QuantumDynamics" title="Dashboard Screen"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss2.png"></a>
-  <a href="https://github.com/acuon/QuantumDynamics" title="Image Capture"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss3.png"></a>
-  <a href="https://github.com/acuon/QuantumDynamics" title="Device Information"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss4.png"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Login Screen"><img height="300" width="150" src="https://github.com/acuon/QuantumDynamics/blob/master/files/ss/ss1.png"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Dashboard Screen"><img height="300" width="150" src="https://github.com/acuon/QuantumDynamics/blob/master/files/ss/ss2.png"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Image Capture"><img height="300" width="150" src="https://github.com/acuon/QuantumDynamics/blob/master/files/ss/ss3.png"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Device Information"><img height="300" width="150" src="https://github.com/acuon/QuantumDynamics/blob/master/files/ss/ss4.png"></a>
 </p>
 
 
