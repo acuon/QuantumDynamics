@@ -1,5 +1,6 @@
 package com.example.quantumdynamics.ui.login;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -15,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
-    LoginViewModel viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+//    LoginViewModel viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
 
     @Override

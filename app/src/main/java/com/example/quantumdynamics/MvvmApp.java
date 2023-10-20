@@ -4,6 +4,7 @@ import android.app.Application;
 
 import dagger.hilt.android.HiltAndroidApp;
 
+@HiltAndroidApp
 public class MvvmApp extends Application {
 
     private MvvmApp appContext = null;

@@ -1,7 +1,6 @@
 package com.example.quantumdynamics.di;
 
 
-import android.app.Application;
 
 import com.example.quantumdynamics.ui.login.LoginViewModel;
 
