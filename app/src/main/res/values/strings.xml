@@ -7,10 +7,13 @@
     <string name="close_the_app">Close the App</string>
     <string name="open_camera">Open Camera</string>
     <string name="back">back</string>
+    <string name="exit">Exit</string>
 
     <string name="invalid_email_password">Please provide a valid email and password.</string>
     <string name="an_error_occurred_please_try_again">An Error Occurred, Please try again</string>
     <string name="an_error_occurred_while_capture">An error occurred while capturing image</string>
     <string name="an_error_occurred">An Error Occurred</string>
     <string name="necessary_permissions_required">necessary permission are required to capture image</string>
+    <string name="exit_warning_message">Are you sure you want to exit the app?</string>
+    <string name="storage_directory_full">Storage directory is null</string>
 </resources>

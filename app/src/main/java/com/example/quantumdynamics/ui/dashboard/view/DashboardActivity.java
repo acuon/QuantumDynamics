@@ -2,6 +2,7 @@ package com.example.quantumdynamics.ui.dashboard.view;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -11,7 +12,9 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+
 import androidx.core.content.FileProvider;
+
 import com.example.quantumdynamics.BR;
 import com.example.quantumdynamics.R;
 import com.example.quantumdynamics.base.BaseActivity;
@@ -21,8 +24,10 @@ import com.example.quantumdynamics.ui.dashboard.model.SystemSpecifications;
 import com.example.quantumdynamics.ui.dashboard.viewmodel.DashboardViewModel;
 import com.example.quantumdynamics.utils.AppConstants;
 import com.example.quantumdynamics.utils.CommonUtils;
+
 import java.io.File;
 import java.io.IOException;
+
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
@@ -67,9 +72,9 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         if (storageDir != null) {
-            return File.createTempFile(imageFileName, ".jpg", storageDir);
+            return File.createTempFile(imageFileName, AppConstants.FILE_FORMAT_JPG, storageDir);
         } else {
-            throw new IOException("Storage directory is null");
+            throw new IOException(getString(R.string.storage_directory_full));
         }
     }
 
@@ -146,7 +151,12 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
     @Override
     public void exitApp() {
         Log.d(TAG, "exit app");
-        finish();
+        CommonUtils.showExitDialog(this, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                if (which == DialogInterface.BUTTON_POSITIVE) finish();
+            }
+        });
     }
 
     @Override

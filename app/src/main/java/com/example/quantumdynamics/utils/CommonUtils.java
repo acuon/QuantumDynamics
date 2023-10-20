@@ -3,10 +3,16 @@ package com.example.quantumdynamics.utils;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Environment;
 import android.os.StatFs;
 import android.provider.Settings;
 import android.util.Patterns;
+
+import androidx.appcompat.app.AlertDialog;
+
+import com.example.quantumdynamics.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -68,6 +74,16 @@ public final class CommonUtils {
             }
         }
         return String.format("%.2f %s", formattedSize, suffix);
+    }
+
+    public static void showExitDialog(Context context, DialogInterface.OnClickListener listener) {
+        new AlertDialog.Builder(context)
+                .setTitle(context.getString(R.string.exit))
+                .setMessage(context.getString(R.string.exit_warning_message))
+                .setPositiveButton(android.R.string.yes, listener)
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
 }

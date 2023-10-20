@@ -21,11 +21,14 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
 
     private T mViewDataBinding;
 
+    //injecting the viewmodel
     @Inject
     protected V viewModel;
 
+    //method for getting the binding variable - viewmodel reference
     public abstract int getBindingVariable();
 
+    //activity layout reference
     public abstract
     @LayoutRes
     int getLayoutId();
@@ -91,6 +94,7 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
         }
     };
 
+    //setting the binding variable
     private void performDataBinding() {
         mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId());
         mViewDataBinding.setVariable(getBindingVariable(), viewModel);

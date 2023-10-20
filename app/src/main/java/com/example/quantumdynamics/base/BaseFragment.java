@@ -12,12 +12,18 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 
-public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
+public abstract class BaseFragment<T extends ViewDataBinding, V extends BaseViewModel> extends Fragment {
 
     private BaseActivity mActivity;
     private View mRootView;
     private T mViewDataBinding;
 
+    private V viewModel;
+
+    //method for getting the binding variable - viewmodel reference
+    public abstract int getBindingVariable();
+
+    //fragment layout reference
     public abstract
     @LayoutRes
     int getLayoutId();
@@ -55,7 +61,7 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        mViewDataBinding.setVariable(getBindingVariable());
+        mViewDataBinding.setVariable(getBindingVariable(), viewModel);
         mViewDataBinding.setLifecycleOwner(this);
         mViewDataBinding.executePendingBindings();
     }

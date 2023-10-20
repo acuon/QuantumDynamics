@@ -34,6 +34,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
     protected void onViewClicked(View view) {
     }
 
+    // Binding variable is set for the ViewModel.
     @Override
     public int getBindingVariable() {
         return BR.viewModel;

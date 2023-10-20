@@ -16,4 +16,6 @@ public final class AppConstants {
 
     public static final String OS_ARCH = "os.arch";
 
+    public static final String FILE_FORMAT_JPG = ".jpg";
+
 }
