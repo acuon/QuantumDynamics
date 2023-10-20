@@ -1,9 +1,7 @@
 package com.example.quantumdynamics.di;
 
-
 import com.example.quantumdynamics.ui.dashboard.viewmodel.DashboardViewModel;
 import com.example.quantumdynamics.ui.login.viewmodel.LoginViewModel;
-
 import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;

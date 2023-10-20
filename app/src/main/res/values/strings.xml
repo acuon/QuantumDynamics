@@ -10,6 +10,7 @@
 
     <string name="invalid_email_password">Please provide a valid email and password.</string>
     <string name="an_error_occurred_please_try_again">An Error Occurred, Please try again</string>
+    <string name="an_error_occurred_while_capture">An error occurred while capturing image</string>
     <string name="an_error_occurred">An Error Occurred</string>
     <string name="necessary_permissions_required">necessary permission are required to capture image</string>
 </resources>

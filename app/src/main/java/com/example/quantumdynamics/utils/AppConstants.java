@@ -14,4 +14,6 @@ public final class AppConstants {
 
     public static final String FILE_PROVIDER = "com.example.quantumdynamics.fileprovider";
 
+    public static final String OS_ARCH = "os.arch";
+
 }

@@ -22,25 +22,12 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
     private final String TAG = "LOGIN_ACTIVITY";
 
     private ActivityLoginBinding binding;
-//    private LoginViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = getViewDataBinding();
         viewModel.setNavigator(this);
-//        viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-        bindViewEvents();
-        setup();
-    }
-
-    private void bindViewEvents() {
-//        binding.login.setOnClickListener(getClickListener());
-    }
-
-    private void setup() {
-//        DashboardActivity.present(this);
-//        finish();
     }
 
     @Override

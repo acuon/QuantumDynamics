@@ -2,14 +2,11 @@ package com.example.quantumdynamics.base;
 
 import androidx.databinding.ObservableBoolean;
 import androidx.lifecycle.ViewModel;
-
 import java.lang.ref.WeakReference;
 
 public abstract class BaseViewModel<N> extends ViewModel {
 
-
     private final ObservableBoolean mIsLoading = new ObservableBoolean();
-
 
     private WeakReference<N> mNavigator;
 

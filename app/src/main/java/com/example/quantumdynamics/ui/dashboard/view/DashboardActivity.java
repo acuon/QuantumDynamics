@@ -12,7 +12,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import androidx.core.content.FileProvider;
-import com.bumptech.glide.Glide;
 import com.example.quantumdynamics.BR;
 import com.example.quantumdynamics.R;
 import com.example.quantumdynamics.base.BaseActivity;
@@ -81,12 +80,11 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
             try {
                 photoFile = createImageFile();
             } catch (IOException exception) {
-                Log.e(TAG, "An error occurred while capturing image", exception);
+                handleError(exception);
+                Log.e(TAG, getString(R.string.an_error_occurred_while_capture), exception);
             }
             if (photoFile != null) {
-                photoUri = FileProvider.getUriForFile(this,
-                        AppConstants.FILE_PROVIDER,
-                        photoFile);
+                photoUri = FileProvider.getUriForFile(this, AppConstants.FILE_PROVIDER, photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
@@ -99,7 +97,6 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             if (photoUri != null) {
                 viewModel.setImageUri(photoUri);
-//                Glide.with(this).load(photoUri).into(binding.image);
             }
         }
     }
@@ -126,13 +123,14 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
     }
 
     private SystemSpecifications createSystemSpecsModel() {
-        String processorDetails = System.getProperty("os.arch");
+        String processorDetails = System.getProperty(AppConstants.OS_ARCH);
         String totalMemory = CommonUtils.getTotalMemory(this);
         String storageCapacity = CommonUtils.getTotalStorageCapacity();
         SystemSpecifications specs = new SystemSpecifications(Build.MODEL, Build.VERSION.RELEASE, processorDetails, totalMemory, storageCapacity);
         Log.d(TAG, "Specs" + specs.getDeviceModel() + " " + specs.getStorageCapacity() + " " + specs.getAndroidVersion() + " " + specs.getProcessorDetails() + " " + specs.getRamDetails());
         return specs;
     }
+
     @Override
     public void handleError(Throwable throwable) {
         showToast(getString(R.string.an_error_occurred_please_try_again));

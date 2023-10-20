@@ -2,21 +2,11 @@ package com.example.quantumdynamics.utils;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Environment;
 import android.os.StatFs;
 import android.provider.Settings;
 import android.util.Patterns;
-
-import com.example.quantumdynamics.R;
-import com.example.quantumdynamics.ui.dashboard.view.DashboardActivity;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
