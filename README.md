@@ -9,10 +9,10 @@ You can download the APK file of the Bhagwad Geeta app from the following link:
 
 ## Screenshots
 <p align="center">
-  <a href="https://github.com/acuon/QuantumDynamics" title="Login Screen"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss1.jpeg"></a>
-  <a href="https://github.com/acuon/QuantumDynamics" title="Dashboard Screen"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss2.jpeg"></a>
-  <a href="https://github.com/acuon/QuantumDynamics" title="Image Capture"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss3.jpeg"></a>
-  <a href="https://github.com/acuon/QuantumDynamics" title="Device Information"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss4.jpeg"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Login Screen"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss1.png"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Dashboard Screen"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss2.png"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Image Capture"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss3.png"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Device Information"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss4.png"></a>
 </p>
 
 
