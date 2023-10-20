@@ -21,6 +21,8 @@ You can download the APK file of the Bhagwad Geeta app from the following link:
 To install the Quantum Dynamics application, follow these steps:
 
 1. Clone the repository to your local machine.
+   ```bash
+   https://github.com/acuon/QuantumDynamics.git
 2. Open the project in Android Studio.
 3. Build the project and run it on your Android device or emulator.
 
@@ -55,7 +57,6 @@ The Quantum Dynamics application utilizes the following dependencies:
 - androidx.work
 - androidx.databinding
 - com.google.dagger:hilt-android
-- androidx.activity:activity-ktx
 - androidx.hilt:hilt-work
 - com.github.bumptech.glide:glide
 
