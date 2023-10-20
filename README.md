@@ -2,6 +2,20 @@
 
 Welcome to the Quantum Dynamics Android application repository! This application allows users to access system specifications, capture images using the camera, and includes a secure login screen. The project is built using the MVVM architecture.
 
+## APK File
+
+You can download the APK file of the Bhagwad Geeta app from the following link:
+[Download QuantamDynamics App](https://github.com/acuon/QuantumDynamics/tree/main/files/apk)
+
+## Screenshots
+<p align="center">
+  <a href="https://github.com/acuon/QuantumDynamics" title="Login Screen"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss1.jpeg"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Dashboard Screen"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss2.jpeg"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Image Capture"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss3.jpeg"></a>
+  <a href="https://github.com/acuon/QuantumDynamics" title="Device Information"><img height="300" width="150" src="https://github.com/acuon/BhagwadGeeta/blob/main/files/ss/ss4.jpeg"></a>
+</p>
+
+
 ## Installation
 
 To install the Quantum Dynamics application, follow these steps:
