@@ -1,6 +1,6 @@
 package com.example.quantumdynamics.ui.login;
 
-import com.example.quantumdynamics.ui.base.BaseViewModel;
+import com.example.quantumdynamics.base.BaseViewModel;
 import javax.inject.Inject;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 

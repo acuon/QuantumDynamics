@@ -1,4 +1,4 @@
-package com.example.quantumdynamics.ui.base;
+package com.example.quantumdynamics.base;
 
 import androidx.lifecycle.ViewModel;
 
