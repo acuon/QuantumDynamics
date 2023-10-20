@@ -97,7 +97,8 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             if (photoUri != null) {
-                Glide.with(this).load(photoUri).into(binding.image);
+                viewModel.setImageUri(photoUri);
+//                Glide.with(this).load(photoUri).into(binding.image);
             }
         }
     }
@@ -125,28 +126,30 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
 
     private SystemSpecifications createSystemSpecsModel() {
         String processorDetails = System.getProperty("os.arch");
-        Long totalMemory = CommonUtils.getTotalMemory(this);
-        String storageCapacity = CommonUtils.getStorageCapacity();
+        String totalMemory = CommonUtils.getTotalMemory(this);
+        String storageCapacity = CommonUtils.getTotalStorageCapacity();
         SystemSpecifications specs = new SystemSpecifications(Build.MODEL, Build.VERSION.RELEASE, processorDetails, totalMemory, storageCapacity);
         Log.d(TAG, "Specs" + specs.getDeviceModel() + " " + specs.getStorageCapacity() + " " + specs.getAndroidVersion() + " " + specs.getProcessorDetails() + " " + specs.getRamDetails());
         return specs;
     }
     @Override
     public void handleError(Throwable throwable) {
+        showToast("An Error Occurred, Please Try Again");
         Log.e(TAG, "An error occurred", throwable);
     }
 
     @Override
     public void showSystemSpecs() {
         viewModel.setSystemSpecifications(createSystemSpecsModel());
-        showToast("show system specs");
+//        showToast("show system specs");
         Log.d(TAG, "show system specs");
     }
 
     @Override
     public void exitApp() {
-        showToast("exit app");
+//        showToast("exit app");
         Log.d(TAG, "exit app");
+        finish();
     }
 
     @Override

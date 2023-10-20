@@ -65,31 +65,44 @@ public final class CommonUtils {
         return progressDialog;
     }
 
-    public static Long getTotalMemory(Context context) {
+    public static String getTotalMemory(Context context) {
         ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
         ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         if (activityManager != null) {
             activityManager.getMemoryInfo(memoryInfo);
         }
-        return memoryInfo.totalMem;
+        return formatSize(memoryInfo.totalMem);
     }
 
-    public static String getStorageCapacity() {
+    public static String getAvailableStorageCapacity() {
         StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
         long bytesAvailable = stat.getBlockSizeLong() * stat.getAvailableBlocksLong();
         return formatSize(bytesAvailable);
     }
 
+    public static String getTotalStorageCapacity() {
+        StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
+        long totalBytes = stat.getBlockSizeLong() * stat.getBlockCountLong();
+        return formatSize(totalBytes);
+    }
+
+
     private static String formatSize(long size) {
-        String suffix = null;
+        String suffix = "B";
+        double formattedSize = size;
         if (size >= 1024) {
             suffix = "KB";
-            size /= 1024;
-            if (size >= 1024) {
+            formattedSize = size / 1024.0;
+            if (formattedSize >= 1024) {
                 suffix = "MB";
-                size /= 1024;
+                formattedSize /= 1024.0;
+                if (formattedSize >= 1024) {
+                    suffix = "GB";
+                    formattedSize /= 1024.0;
+                }
             }
         }
-        return String.format("%d %s", size, suffix);
+        return String.format("%.2f %s", formattedSize, suffix);
     }
+
 }

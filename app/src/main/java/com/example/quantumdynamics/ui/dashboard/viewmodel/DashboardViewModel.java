@@ -1,5 +1,7 @@
 package com.example.quantumdynamics.ui.dashboard.viewmodel;
 
+import android.net.Uri;
+
 import androidx.databinding.ObservableBoolean;
 import androidx.databinding.ObservableField;
 
@@ -21,49 +23,58 @@ public class DashboardViewModel extends BaseViewModel<DashboardNavigation> {
 
     private final ObservableBoolean isButtonContainer = new ObservableBoolean(true);
     private final ObservableBoolean cameraButtonClicked = new ObservableBoolean();
-    private SystemSpecifications demo = new SystemSpecifications("model", "version", "processor", 0L, "storage");
     private final ObservableField<SystemSpecifications> systemSpecs = new ObservableField<>();
+    private final ObservableField<Uri> imageUri = new ObservableField<>();
 
-    public ObservableBoolean getIsFocusOnButtonContainer() {
+    public ObservableBoolean getIsButtonContainer() {
         return isButtonContainer;
     }
+
     public ObservableBoolean getCameraButtonClicked() {
         return cameraButtonClicked;
     }
 
-    public SystemSpecifications getSystemSpecs() {
-        return systemSpecs.get();
+    public ObservableField<SystemSpecifications> getSystemSpecs() {
+        return systemSpecs;
+    }
+
+    public ObservableField<Uri> getImageUri() {
+        return imageUri;
     }
 
     public void setSystemSpecifications(SystemSpecifications specs) {
         systemSpecs.set(specs);
     }
 
-    public void setCameraButtonClicked(Boolean value) {
-        cameraButtonClicked.set(value);
+    public void setImageUri(Uri uri) {
+        setIsButtonContainerValue(false);
+        setCameraButtonClicked(true);
+        imageUri.set(uri);
+    }
+
+    public void showSystemSpecs() {
+        getNavigator().showSystemSpecs();
+        setIsButtonContainerValue(false);
+        setCameraButtonClicked(false);
+    }
+
+    public void onCameraClicked() {
+        getNavigator().openCamera();
+    }
+
+    public void onExitClick() {
+        getNavigator().exitApp();
+    }
+
+    public void onCloseButtonClicked() {
+        setIsButtonContainerValue(true);
     }
 
     private void setIsButtonContainerValue(boolean value) {
         isButtonContainer.set(value);
     }
 
-    public void showSystemSpecs() {
-        setIsButtonContainerValue(false);
-        setCameraButtonClicked(false);
-        getNavigator().showSystemSpecs();
-    }
-
-    public void onCameraClicked() {
-        setIsButtonContainerValue(false);
-        setCameraButtonClicked(true);
-        getNavigator().openCamera();
-    }
-
-    public void onExitClick() {
-        setIsButtonContainerValue(false);
-    }
-
-    public void onCloseButtonClicked() {
-        setIsButtonContainerValue(true);
+    private void setCameraButtonClicked(boolean value) {
+        cameraButtonClicked.set(value);
     }
 }

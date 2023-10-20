@@ -5,10 +5,10 @@ public class SystemSpecifications {
     private String deviceModel;
     private String androidVersion;
     private String processorDetails;
-    private Long ramDetails;
+    private String ramDetails;
     private String storageCapacity;
 
-    public SystemSpecifications(String deviceModel, String androidVersion, String processorDetails, Long ramDetails, String storageCapacity) {
+    public SystemSpecifications(String deviceModel, String androidVersion, String processorDetails, String ramDetails, String storageCapacity) {
         this.deviceModel = deviceModel;
         this.androidVersion = androidVersion;
         this.processorDetails = processorDetails;

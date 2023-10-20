@@ -7,4 +7,5 @@
     <string name="show_system_specs">Show System Specs</string>
     <string name="close_the_app">Close the App</string>
     <string name="open_camera">Open Camera</string>
+    <string name="back">back</string>
 </resources>
