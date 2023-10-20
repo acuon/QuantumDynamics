@@ -1,14 +1,20 @@
 package com.example.quantumdynamics.utils;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Environment;
+import android.os.StatFs;
 import android.provider.Settings;
 import android.util.Patterns;
+
 import com.example.quantumdynamics.R;
+import com.example.quantumdynamics.ui.dashboard.view.DashboardActivity;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -57,5 +63,33 @@ public final class CommonUtils {
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
         return progressDialog;
+    }
+
+    public static Long getTotalMemory(Context context) {
+        ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        if (activityManager != null) {
+            activityManager.getMemoryInfo(memoryInfo);
+        }
+        return memoryInfo.totalMem;
+    }
+
+    public static String getStorageCapacity() {
+        StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
+        long bytesAvailable = stat.getBlockSizeLong() * stat.getAvailableBlocksLong();
+        return formatSize(bytesAvailable);
+    }
+
+    private static String formatSize(long size) {
+        String suffix = null;
+        if (size >= 1024) {
+            suffix = "KB";
+            size /= 1024;
+            if (size >= 1024) {
+                suffix = "MB";
+                size /= 1024;
+            }
+        }
+        return String.format("%d %s", size, suffix);
     }
 }

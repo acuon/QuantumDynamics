@@ -1,7 +1,7 @@
 package com.example.quantumdynamics.di;
 
 
-
+import com.example.quantumdynamics.ui.dashboard.viewmodel.DashboardViewModel;
 import com.example.quantumdynamics.ui.login.viewmodel.LoginViewModel;
 
 import dagger.Module;
@@ -19,6 +19,12 @@ public final class AppModule {
     @Singleton
     public LoginViewModel provideHomeViewModel() {
         return new LoginViewModel();
+    }
+
+    @Provides
+    @Singleton
+    public DashboardViewModel provideDashboardViewModel() {
+        return new DashboardViewModel();
     }
 
 }

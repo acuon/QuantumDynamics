@@ -18,8 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/activityMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,31 +27,31 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="80dp"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_80dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_80dp"
                 android:backgroundTint="@color/white"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="22dp"
+                app:cardCornerRadius="@dimen/_30dp"
+                app:cardElevation="@dimen/_22dp"
                 app:strokeColor="@color/black"
-                app:strokeWidth="1dp">
+                app:strokeWidth="@dimen/_1dp">
 
                 <TextView
                     style="@style/TextStyle.Heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|top"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="@dimen/_60dp"
                     android:text="@string/login"
                     android:textAllCaps="true"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_20sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/_20dp"
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -66,17 +65,17 @@
                             style="@style/TextStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginStart="@dimen/_20dp"
+                            android:layout_marginEnd="@dimen/_20dp"
                             android:background="@drawable/input_border_bottom"
                             android:cursorVisible="true"
                             android:gravity="center|left|bottom"
                             android:hint="@string/email"
                             android:inputType="textEmailAddress"
                             android:maxLength="50"
-                            android:paddingBottom="10dp"
+                            android:paddingBottom="@dimen/_10dp"
                             android:textColor="@color/black_effective"
-                            android:textSize="18sp" />
+                            android:textSize="@dimen/_18sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,37 +92,37 @@
                             style="@style/TextStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="30dp"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="@dimen/_20dp"
+                            android:layout_marginTop="@dimen/_30dp"
+                            android:layout_marginRight="@dimen/_20dp"
                             android:background="@drawable/input_border_bottom"
                             android:cursorVisible="true"
                             android:gravity="center|left|bottom"
                             android:inputType="textPassword"
                             android:maxLength="50"
-                            android:paddingBottom="10dp"
+                            android:paddingBottom="@dimen/_10dp"
                             android:textColor="@color/black_effective"
-                            android:textSize="18sp" />
+                            android:textSize="@dimen/_18sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Button
-                        android:id="@+id/btnServerLogin"
+                        android:id="@+id/button_login"
                         style="@style/Button.Primary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_margin="15dp"
+                        android:layout_margin="@dimen/_15dp"
                         android:onClick="@{() -> viewModel.onLoginClick()}"
-                        android:padding="10dp"
+                        android:padding="@dimen/_10dp"
                         android:text="@string/login"
-                        android:textSize="18dp"
+                        android:textSize="@dimen/_18sp"
                         tools:text="LOGIN" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.core.widget.ContentLoadingProgressBar
             android:id="@+id/address_looking_up"
@@ -134,7 +133,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

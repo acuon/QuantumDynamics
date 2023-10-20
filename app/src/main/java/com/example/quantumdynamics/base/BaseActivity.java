@@ -58,10 +58,8 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
         return mViewDataBinding;
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
     public boolean hasPermission(String permission) {
-        return Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
-                checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
+        return checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
     }
 
     public void hideKeyboard() {

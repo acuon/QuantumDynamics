@@ -9,7 +9,7 @@ import com.example.quantumdynamics.R;
 import com.example.quantumdynamics.BR;
 import com.example.quantumdynamics.databinding.ActivityLoginBinding;
 import com.example.quantumdynamics.base.BaseActivity;
-import com.example.quantumdynamics.ui.dashboard.DashboardActivity;
+import com.example.quantumdynamics.ui.dashboard.view.DashboardActivity;
 import com.example.quantumdynamics.ui.login.LoginNavigation;
 import com.example.quantumdynamics.ui.login.viewmodel.LoginViewModel;
 import com.example.quantumdynamics.ui.login.model.User;
@@ -39,6 +39,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
     }
 
     private void setup() {
+        DashboardActivity.present(this);
+        finish();
     }
 
     @Override

@@ -4,4 +4,7 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="invalid_email_password">Please provide a valid email and password.</string>
+    <string name="show_system_specs">Show System Specs</string>
+    <string name="close_the_app">Close the App</string>
+    <string name="open_camera">Open Camera</string>
 </resources>
