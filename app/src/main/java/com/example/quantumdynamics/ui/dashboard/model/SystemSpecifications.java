@@ -1,5 +1,9 @@
 package com.example.quantumdynamics.ui.dashboard.model;
 
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
+
 public class SystemSpecifications {
 
     private String deviceModel;
@@ -16,23 +20,29 @@ public class SystemSpecifications {
         this.storageCapacity = storageCapacity;
     }
 
-    public String getDeviceModel() {
-        return "Device Model: " + deviceModel;
+    public SpannableString getDeviceModel() {
+        return getFormattedString("DEVICE MODEL \n", deviceModel);
     }
 
-    public String getAndroidVersion() {
-        return "Android Version: " + androidVersion;
+    public SpannableString getAndroidVersion() {
+        return getFormattedString("ANDROID VERSION \n", androidVersion);
     }
 
-    public String getProcessorDetails() {
-        return "Processor: " + processorDetails;
+    public SpannableString getProcessorDetails() {
+        return getFormattedString("PROCESSOR \n", processorDetails);
     }
 
-    public String getRamDetails() {
-        return "RAM:" + ramDetails;
+    public SpannableString getRamDetails() {
+        return getFormattedString("RAM \n", ramDetails);
     }
 
-    public String getStorageCapacity() {
-        return "Storage: " + storageCapacity;
+    public SpannableString getStorageCapacity() {
+        return getFormattedString("STORAGE \n", storageCapacity);
+    }
+
+    private SpannableString getFormattedString(String prefix, String value) {
+        SpannableString spannableString = new SpannableString(prefix + value);
+        spannableString.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0, prefix.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return spannableString;
     }
 }

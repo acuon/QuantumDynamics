@@ -9,7 +9,4 @@ public interface DashboardNavigation {
     void exitApp();
 
     void openCamera();
-
-    void closeContainer();
-
 }

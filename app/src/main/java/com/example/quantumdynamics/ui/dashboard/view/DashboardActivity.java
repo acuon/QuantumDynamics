@@ -20,6 +20,7 @@ import com.example.quantumdynamics.databinding.ActivityDashboardBinding;
 import com.example.quantumdynamics.ui.dashboard.DashboardNavigation;
 import com.example.quantumdynamics.ui.dashboard.model.SystemSpecifications;
 import com.example.quantumdynamics.ui.dashboard.viewmodel.DashboardViewModel;
+import com.example.quantumdynamics.utils.AppConstants;
 import com.example.quantumdynamics.utils.CommonUtils;
 import java.io.File;
 import java.io.IOException;
@@ -84,7 +85,7 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
             }
             if (photoFile != null) {
                 photoUri = FileProvider.getUriForFile(this,
-                        "com.example.quantumdynamics.fileprovider",
+                        AppConstants.FILE_PROVIDER,
                         photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
@@ -119,7 +120,7 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 openCameraAndTakePicture();
             } else {
-                //TODO("Handle the case where permission is denied")
+                showToast(getString(R.string.necessary_permissions_required));
             }
         }
     }
@@ -134,20 +135,18 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
     }
     @Override
     public void handleError(Throwable throwable) {
-        showToast("An Error Occurred, Please Try Again");
-        Log.e(TAG, "An error occurred", throwable);
+        showToast(getString(R.string.an_error_occurred_please_try_again));
+        Log.e(TAG, getString(R.string.an_error_occurred), throwable);
     }
 
     @Override
     public void showSystemSpecs() {
         viewModel.setSystemSpecifications(createSystemSpecsModel());
-//        showToast("show system specs");
         Log.d(TAG, "show system specs");
     }
 
     @Override
     public void exitApp() {
-//        showToast("exit app");
         Log.d(TAG, "exit app");
         finish();
     }
@@ -155,14 +154,7 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
     @Override
     public void openCamera() {
         requestCameraPermission();
-        showToast("open camera");
         Log.d(TAG, "open camera");
-    }
-
-    @Override
-    public void closeContainer() {
-        showToast("close container");
-        Log.d(TAG, "close container");
     }
 }
 

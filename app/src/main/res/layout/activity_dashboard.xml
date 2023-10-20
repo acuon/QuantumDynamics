@@ -92,10 +92,10 @@
 
                 <ImageView
                     android:id="@+id/image"
-                    android:src="@{vm.imageUri}"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/_10dp"
+                    android:src="@{vm.imageUri}"
                     android:visibility="@{vm.cameraButtonClicked ? View.VISIBLE : View.GONE}" />
 
                 <LinearLayout
@@ -103,48 +103,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/_10dp"
-                    android:gravity="center|start"
+                    android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="@{!vm.cameraButtonClicked ? View.VISIBLE : View.GONE}">
 
                     <TextView
                         android:id="@+id/deviceModelTextView"
+                        style="@style/SystemSpecsStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{vm.systemSpecs.deviceModel}"
-                        android:textSize="@dimen/_20sp"
                         tools:text="Device Model: model" />
 
                     <TextView
                         android:id="@+id/androidVersionTextView"
+                        style="@style/SystemSpecsStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{vm.systemSpecs.androidVersion}"
-                        android:textSize="@dimen/_20sp"
                         tools:text="Android Version: version" />
 
                     <TextView
                         android:id="@+id/processorDetailsTextView"
+                        style="@style/SystemSpecsStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{vm.systemSpecs.processorDetails}"
-                        android:textSize="@dimen/_20sp"
                         tools:text="Processor Details: processor" />
 
                     <TextView
                         android:id="@+id/ramDetailsTextView"
+                        style="@style/SystemSpecsStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{vm.systemSpecs.ramDetails}"
-                        android:textSize="@dimen/_20sp"
                         tools:text="Ram Details: Ram" />
 
                     <TextView
                         android:id="@+id/storageCapacityTextView"
+                        style="@style/SystemSpecsStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{vm.systemSpecs.storageCapacity}"
-                        android:textSize="@dimen/_20sp"
                         tools:text="Storage Capacity: storage" />
 
                 </LinearLayout>

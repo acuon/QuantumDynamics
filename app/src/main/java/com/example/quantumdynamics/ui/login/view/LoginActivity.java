@@ -39,17 +39,12 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
     }
 
     private void setup() {
-        DashboardActivity.present(this);
-        finish();
+//        DashboardActivity.present(this);
+//        finish();
     }
 
     @Override
     protected void onViewClicked(View view) {
-//        if (view == binding.login) {
-//            Toast.makeText(LoginActivity.this, "Button Clicked", Toast.LENGTH_SHORT).show();
-//            DashboardActivity.present(this);
-//            finish();
-//        }
     }
 
     @Override
@@ -64,8 +59,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
     @Override
     public void handleError(Throwable throwable) {
-        Log.e(TAG, "An Error Occurred", throwable);
-        showToast("An Error Occurred, Please try again");
+        Log.e(TAG, getString(R.string.an_error_occurred), throwable);
+        showToast(getString(R.string.an_error_occurred_please_try_again));
     }
 
     @Override
